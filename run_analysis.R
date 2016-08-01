@@ -32,7 +32,7 @@ dim(trainY); head(trainY,10); table(trainY)
 dim(subject_train);head(subject_train,10); table(subject_train)
 
 #all test data
-setwd("./datafolder/UCI HAR Dataset/test")
+#setwd() to datafolder/UCI HAR Dataset/test
 getwd()
 testX <- read.table("X_test.txt")
 testY <- read.table("Y_test.txt")
@@ -42,7 +42,7 @@ dim(testY); head(testY,10); table(testY)
 dim(subject_test); head(subject_test,10); table(subject_test)
 
 #features data
-setwd("./datafolder/UCI HAR Dataset")
+#setwd() to datafolder/UCI HAR Dataset
 features <- read.table("features.txt")
 dim(features); head(features)
 names(features)
@@ -84,6 +84,8 @@ colnames(totalSubject) <- c("SubjectID")
 
 finalData <- cbind(totalSubject,selectedLabeledData[,-c(1)])
 head(finalData)
+names(finalData)
+
 
 #saving new merged data
 write.table(finalData, file="merged_total_data.txt", row.names = FALSE)
